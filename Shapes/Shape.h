@@ -12,10 +12,16 @@ namespace Shapes {
 
     using namespace Math;
     using namespace Geometry;
+
+    enum Hit {
+        HIT_NONE,
+        HIT_OUT,
+        HIT_IN
+    };
+
     
     class Shape {
-        
-        
+
 
     public:
         Shape(Vector<3,float> c);
@@ -24,10 +30,19 @@ namespace Shapes {
 
         MaterialPtr mat;
         
-        virtual bool Intersect(Ray r, Vector<3,float>& point) =0;
+        virtual Hit Intersect(Ray r, Vector<3,float>& point) =0;
         virtual Vector<3,float> NormalAt(Vector<3,float> point) =0;
+        virtual std::string ToString() const {
+            std::ostringstream out;
+            out << "Shape";            
+            return out.str();
+        }
+
 
     };
+
+
+    std::ostream& operator<<(std::ostream& os, const Shape* e);
 
 }
 }

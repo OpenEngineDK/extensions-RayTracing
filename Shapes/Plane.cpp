@@ -13,7 +13,7 @@ namespace OpenEngine {
             
         
 
-        bool Plane::Intersect(Ray ray, Vector<3,float>& point) {
+        Hit Plane::Intersect(Ray ray, Vector<3,float>& point) {
             
             /*
               p*n + d = 0
@@ -30,15 +30,13 @@ namespace OpenEngine {
 
             if (disc) {
                 float t = (-d -ray.origin*n) / disc;
-                if (t > 0) {                
-                    
-                    point = ray.PointAtT(t);
-                    
-                    return true;
-                }               
+
+                point = ray.PointAtT(t);
+                
+                return (t > 0) ? HIT_OUT : HIT_IN;
             } 
 
-            return false;
+            return HIT_NONE;;
 
         }
         

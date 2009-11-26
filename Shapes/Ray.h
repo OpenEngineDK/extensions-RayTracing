@@ -32,6 +32,9 @@ namespace Shapes {
             return out.str();
         }
 
+        void AddEps(float eps = 0.001) {
+            origin += direction * eps;
+        }
 
     };
 
