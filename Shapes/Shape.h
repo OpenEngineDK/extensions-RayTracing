@@ -29,8 +29,11 @@ namespace Shapes {
         Vector<3,float> center;
 
         MaterialPtr mat;
+        float reflection;
+        bool transparent;
+        float refraction;
         
-        virtual Hit Intersect(Ray r, Vector<3,float>& point) =0;
+        virtual Hit Intersect(const Ray r, Vector<3,float>& point) =0;
         virtual Vector<3,float> NormalAt(Vector<3,float> point) =0;
         virtual std::string ToString() const {
             std::ostringstream out;

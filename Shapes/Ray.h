@@ -18,7 +18,7 @@ namespace Shapes {
             return (origin != r.origin) && (direction != r.direction);
         }
 
-        Vector<3,float> PointAtT(float t) {
+        Vector<3,float> PointAtT(float t) const {
             return origin + t*direction;
         }
 

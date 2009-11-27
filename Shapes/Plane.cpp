@@ -13,7 +13,7 @@ namespace OpenEngine {
             
         
 
-        Hit Plane::Intersect(Ray ray, Vector<3,float>& point) {
+        Hit Plane::Intersect(const Ray ray, Vector<3,float>& point) {
             
             /*
               p*n + d = 0

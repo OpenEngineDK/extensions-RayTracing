@@ -18,7 +18,7 @@ namespace OpenEngine {
             return n;
         }
 
-        Hit Sphere::Intersect(Ray ray, Vector<3,float>& point) {
+        Hit Sphere::Intersect(const Ray ray, Vector<3,float>& point) {
 
             /*
               sphere: ||x - c||^2 = r^2
@@ -51,7 +51,14 @@ namespace OpenEngine {
 
                     return HIT_OUT;
 
+                } else {
+                    
+                    float t = min(t1,t2);
+                    point = ray.PointAtT(t);
+
+                    return HIT_IN;
                 }
+                
 
             }
 

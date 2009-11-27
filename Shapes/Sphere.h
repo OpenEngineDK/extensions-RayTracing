@@ -16,7 +16,7 @@ namespace Shapes {
 
         float radius;
 
-        virtual Hit Intersect(Ray r, Vector<3,float>& point);
+        virtual Hit Intersect(const Ray r, Vector<3,float>& point);
         virtual Vector<3,float> NormalAt(Vector<3,float> point);
         virtual std::string ToString() const {
             std::ostringstream out;
