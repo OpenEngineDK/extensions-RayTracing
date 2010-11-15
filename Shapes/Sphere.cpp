@@ -34,10 +34,7 @@ namespace OpenEngine {
             
             Vector<3,float> v = s - c;
 
-
-
             float vd = v * d;
-
             float disc = vd * vd - (v * v - r * r);
             
             if (disc > 0) {

@@ -13,6 +13,9 @@ ADD_LIBRARY(Extensions_RayTracing
   Shapes/Sphere.h
   Shapes/Sphere.cpp
 
+  Shapes/Ellipsoid.h
+  Shapes/Ellipsoid.cpp
+
   Shapes/Ray.h
   Shapes/Ray.cpp
 )
